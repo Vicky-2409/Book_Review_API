@@ -8,10 +8,17 @@ A modern, full-stack application for book enthusiasts to share and discover book
 - **Book Management:** Add, view, edit, and delete books
 - **Review System:** Post, edit, and delete reviews with ratings
 - **Search & Filter:** Find books by title, author, or genre
-
+- **Responsive UI:** Clean, modern interface built with Tailwind CSS
 
 ## 🧱 Tech Stack
 
+### 🖥️ Frontend
+- **Framework:** React with TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Routing:** React Router v6
+- **HTTP Client:** Axios with interceptors
+- **State Management:** React Context API
 
 ### 🛠️ Backend
 - **Runtime:** Node.js
@@ -43,11 +50,14 @@ A modern, full-stack application for book enthusiasts to share and discover book
    cd backend
    npm install
 
-
+   # Frontend dependencies
+   cd ../frontend
+   npm install
+   ```
 
 3. Set up environment variables:
    - Backend: Create a `.env` file in the `backend` directory (see `.env.example`)
-
+   - Frontend: Create a `.env` file in the `frontend` directory (see `.env.example`)
 
 4. Start MongoDB:
    - If using local MongoDB:
@@ -61,6 +71,9 @@ A modern, full-stack application for book enthusiasts to share and discover book
      ```bash
      # Start backend (from backend directory)
      npm run dev
+
+     # Start frontend (from frontend directory)
+     npm run dev
      ```
 
    - Production mode:
@@ -68,6 +81,10 @@ A modern, full-stack application for book enthusiasts to share and discover book
      # Build and start backend
      npm run build
      npm start
+
+     # Build frontend
+     cd ../frontend
+     npm run build
      ```
 
 ## 🗄️ Project Structure
@@ -91,6 +108,22 @@ backend/
 └── package.json              # Dependencies
 ```
 
+### Frontend Structure
+```
+frontend/
+├── src/
+│   ├── components/           # UI components
+│   ├── pages/                # Page components
+│   ├── api/                  # API service functions
+│   ├── hooks/                # Custom React hooks
+│   ├── context/              # Context providers
+│   ├── types/                # TypeScript types
+│   ├── utils/                # Helper functions
+│   ├── App.tsx               # Main app component
+│   └── main.tsx              # Entry point
+├── public/                   # Static assets
+├── index.html                # HTML template
+└── package.json              # Dependencies
 ```
 
 ## 🗃️ MongoDB Schema
@@ -505,6 +538,7 @@ Benefits:
 2. **Repository Pattern**: Implemented to make the database layer replaceable and testable
 3. **JWT Authentication**: Selected for its stateless nature and scalability
 4. **Pagination**: All list endpoints include pagination to handle large datasets efficiently
+5. **Tailwind CSS**: Used for rapid UI development and consistent styling
 6. **Axios Interceptors**: Implemented for automatic token handling and error management
 
 ## 🔧 Extending the Application
@@ -548,7 +582,4 @@ To switch from MongoDB to another database (e.g., PostgreSQL):
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.#   B o o k _ R e v i e w _ A P I  
- #   B o o k _ R e v i e w _ A P I _ L i v e  
- #   B o o k _ R e v i e w _ A P I _ L i v e  
- 
+This project is licensed under the MIT License - see the LICENSE file for details.
