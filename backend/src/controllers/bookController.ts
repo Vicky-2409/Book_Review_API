@@ -52,7 +52,6 @@ export class BookController {
         sortBy: req.query.sortBy as 'title' | 'author' | 'publicationYear' | 'averageRating' | undefined,
         sortOrder: req.query.sortOrder as 'asc' | 'desc' | undefined,
       };
-      
       const books = await this.bookService.getAllBooks(queryParams);
       
       res.status(200).json(books);
